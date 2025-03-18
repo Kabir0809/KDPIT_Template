@@ -127,7 +127,7 @@ a:hover {
 }
 
 .carousel-item {
-    height: 80vh;
+    height: 90vh;
     min-height: 500px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -138,7 +138,7 @@ a:hover {
 }
 
 .carousel-item img {
-    height: 80vh;
+    height: 90vh;
     object-fit: cover;
     filter: brightness(0.7);
 }
@@ -208,8 +208,13 @@ a:hover {
 }
 
 /* Clubs Section Styles */
+.club-container{
+    background-color: #d6d5d5 !important;
+
+}
 .club-card {
     background-color: #fff;
+    
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -261,6 +266,9 @@ a:hover {
 }
 
 /* Student Chapters Section Styles */
+.chapter-container{
+    background-color: #d6d5d5 !important;
+}
 .chapter-card {
     background-color: #fff;
     border-radius: 10px;
@@ -269,6 +277,7 @@ a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     height: 100%;
+    z-index: 1;
 }
 
 .chapter-card:hover {
@@ -342,6 +351,9 @@ a:hover {
 }
 
 /* Gallery Section Styles */
+.gallery-container{
+    background-color: #d6d5d5 !important;
+}
 .gallery-item {
     position: relative;
     border-radius: 10px;
@@ -415,6 +427,9 @@ a:hover {
 }
 
 /* Testimonials Section Styles */
+.testimonial-container{
+    background-color: #d6d5d5 !important;
+}
 .testimonial-item {
     padding: 20px;
 }
@@ -1010,7 +1025,7 @@ a:hover {
     </section>
 
     <!-- Clubs Section -->
-    <section id="clubs" class="py-5 bg-light">
+    <section id="clubs" class="py-5 club-container">
         <div class="container">
             <h2 class="section-title text-center" data-aos="fade-up">Student <span class="highlight">Clubs</span></h2>
             <p class="text-center mb-5" data-aos="fade-up">Join our vibrant student clubs to enhance your skills and explore your interests</p>
@@ -1120,7 +1135,7 @@ a:hover {
     </section>
 
     <!-- Student Chapters Section -->
-    <section id="chapters" class="py-5 bg-light">
+    <section id="chapters" class="py-5 chapter-container">
         <div class="container">
             <h2 class="section-title text-center" data-aos="fade-up">Student <span class="highlight">Chapters</span></h2>
             <p class="text-center mb-5" data-aos="fade-up">Our student chapters provide opportunities for professional development and networking</p>
@@ -1222,7 +1237,7 @@ a:hover {
     </section>
 
     <!-- Gallery and Events Section -->
-    <section id="gallery" class="py-5 bg-light">
+    <section id="gallery" class="py-5 gallery-container">
         <div class="container">
             <h2 class="section-title text-center" data-aos="fade-up">Gallery & <span class="highlight">Events</span></h2>
             <p class="text-center mb-5" data-aos="fade-up">Glimpses of campus life and recent events</p>
@@ -1362,7 +1377,7 @@ a:hover {
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 bg-light">
+    <section id="testimonials" class="py-5 testimonial-container">
         <div class="container">
             <h2 class="section-title text-center" data-aos="fade-up">Student <span class="highlight">Testimonials</span></h2>
             <p class="text-center mb-5" data-aos="fade-up">What our students and alumni say about their experience</p>
