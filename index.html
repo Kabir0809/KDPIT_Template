@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Information Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Modern Navbar -->
+<header class="header">
+    <div class="container">
+        <nav class="modern-navbar">
+            <div class="navbar-brand">
+                <img src="./logo.webp" alt="College Logo">
+               
+            </div>
+            
+            <div class="navbar-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#home" class="nav-link active"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <span>Academics</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#clubs">Student Clubs</a></li>
+                            <li><a href="#certifications">Certifications</a></li>
+                            <li><a href="#chapters">Student Chapters</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#alumni" class="nav-link"><span>Alumni</span></a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link"><span>Gallery</span></a></li>
+                    <li class="nav-item"><a href="#recruiters" class="nav-link"><span>Recruiters</span></a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link"><span>Testimonials</span></a></li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <a href="#contact" class="action-button">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Home/Image Slider -->
+    <section id="home" class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="./PRIM.webp" alt="College Campus">
+                <div class="slide-content">
+                    <h2>Welcome to Information Technology Department</h2>
+                    <p>Shaping the future through technology and innovation</p>
+                    <a href="#about" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="Students in Lab">
+                <div class="slide-content">
+                    <h2>State-of-the-Art Facilities</h2>
+                    <p>Modern labs equipped with the latest technology</p>
+                    <a href="#about" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="Graduation Ceremony">
+                <div class="slide-content">
+                    <h2>Building Successful Careers</h2>
+                    <p>Our graduates are working in top companies worldwide</p>
+                    <a href="#recruiters" class="btn">Our Recruiters</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="dots"></div>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="Department Building">
+                </div>
+                <div class="about-text">
+                    <h3>Department of Information Technology</h3>
+                    <p>Established in 2000, the Department of Information Technology has been at the forefront of technological education and research. We offer undergraduate and postgraduate programs designed to produce industry-ready professionals.</p>
+                    <p>Our curriculum is regularly updated to reflect the latest technological trends and industry requirements. The department has well-equipped laboratories, experienced faculty, and strong industry connections.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-text">Faculty Members</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-text">Students</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-text">Placement Rate</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-text">Research Papers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs -->
+    <section id="clubs" class="clubs-section">
+        <div class="container">
+            <h2 class="section-title">Student Clubs</h2>
+            <div class="clubs-container">
+                <div class="club-card">
+                    <div class="club-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Coding Club</h3>
+                    <p>A community of coding enthusiasts who participate in competitive programming and hackathons.</p>
+                </div>
+                <div class="club-card">
+                    <div class="club-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & ML Club</h3>
+                    <p>Exploring the frontiers of artificial intelligence and machine learning through projects and workshops.</p>
+                </div>
+                <div class="club-card">
+                    <div class="club-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity Club</h3>
+                    <p>Learning about network security, ethical hacking, and cyber defense strategies.</p>
+                </div>
+                <div class="club-card">
+                    <div class="club-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>App Development Club</h3>
+                    <p>Designing and developing mobile applications for various platforms and purposes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Recognized Certifications -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Industry Recognized Certifications</h2>
+            <p class="section-description">Our department offers various certification courses in collaboration with industry leaders to enhance students' employability.</p>
+            
+            <div class="certifications-container">
+                <div class="certification-card">
+                    <img src="images/cert-aws.png" alt="AWS Certification">
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <p>In partnership with Amazon Web Services</p>
+                </div>
+                <div class="certification-card">
+                    <img src="images/cert-microsoft.png" alt="Microsoft Certification">
+                    <h3>Microsoft Azure Fundamentals</h3>
+                    <p>Official Microsoft certification training</p>
+                </div>
+                <div class="certification-card">
+                    <img src="images/cert-cisco.png" alt="Cisco Certification">
+                    <h3>Cisco Certified Network Associate</h3>
+                    <p>CCNA certification program</p>
+                </div>
+                <div class="certification-card">
+                    <img src="images/cert-google.png" alt="Google Certification">
+                    <h3>Google Cloud Professional</h3>
+                    <p>Cloud engineering certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Chapters -->
+    <section id="chapters" class="chapters-section">
+        <div class="container">
+            <h2 class="section-title">Student Chapters</h2>
+            <div class="chapters-container">
+                <div class="chapter-card">
+                    <img src="images/ieee.png" alt="IEEE Logo">
+                    <h3>IEEE Student Branch</h3>
+                    <p>Promoting technological innovation and excellence for the benefit of humanity.</p>
+                    <a href="#" class="chapter-link">Learn More</a>
+                </div>
+                <div class="chapter-card">
+                    <img src="images/acm.png" alt="ACM Logo">
+                    <h3>ACM Student Chapter</h3>
+                    <p>Advancing computing as a science and profession.</p>
+                    <a href="#" class="chapter-link">Learn More</a>
+                </div>
+                <div class="chapter-card">
+                    <img src="images/csi.png" alt="CSI Logo">
+                    <h3>CSI Student Chapter</h3>
+                    <p>Computer Society of India student branch for professional development.</p>
+                    <a href="#" class="chapter-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable Alumni -->
+    <section id="alumni" class="alumni-section">
+        <div class="container">
+            <h2 class="section-title">Notable Alumni</h2>
+            <div class="alumni-container">
+                <div class="alumni-card">
+                    <div class="alumni-img">
+                        <img src="images/alumni1.jpg" alt="Alumni 1">
+                    </div>
+                    <div class="alumni-info">
+                        <h3>Rahul Sharma</h3>
+                        <p class="alumni-position">Senior Software Engineer, Google</p>
+                        <p class="alumni-batch">Batch of 2015</p>
+                        <p class="alumni-quote">"The foundation I received at the IT department helped me achieve my dreams."</p>
+                    </div>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-img">
+                        <img src="images/alumni2.jpg" alt="Alumni 2">
+                    </div>
+                    <div class="alumni-info">
+                        <h3>Priya Patel</h3>
+                        <p class="alumni-position">CTO, Tech Innovators</p>
+                        <p class="alumni-batch">Batch of 2012</p>
+                        <p class="alumni-quote">"The practical exposure and industry connections were invaluable for my career."</p>
+                    </div>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-img">
+                        <img src="images/alumni3.jpg" alt="Alumni 3">
+                    </div>
+                    <div class="alumni-info">
+                        <h3>Amit Kumar</h3>
+                        <p class="alumni-position">Founder, CloudSecure</p>
+                        <p class="alumni-batch">Batch of 2010</p>
+                        <p class="alumni-quote">"The entrepreneurial spirit fostered by the department gave me the confidence to start my own venture."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery and Events -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Gallery & Events</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-target="gallery-images">Gallery</button>
+                <button class="tab-btn" data-target="events">Upcoming Events</button>
+                <button class="tab-btn" data-target="past-events">Past Events</button>
+            </div>
+            
+            <div class="tab-content">
+                <div id="gallery-images" class="tab-pane active">
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="images/gallery1.jpg" alt="Campus Life">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery2.jpg" alt="Technical Fest">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery3.jpg" alt="Workshop">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery4.jpg" alt="Hackathon">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery5.jpg" alt="Cultural Event">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery6.jpg" alt="Sports Day">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="events" class="tab-pane">
+                    <div class="events-container">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Annual Technical Symposium</h3>
+                                <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                                <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+                                <p class="event-description">A day-long event featuring technical paper presentations, project exhibitions, and expert talks.</p>
+                            </div>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">22</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Hackathon 2023</h3>
+                                <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 6:00 PM</p>
+                                <p class="event-location"><i class="fas fa-map-marker-alt"></i> IT Labs</p>
+                                <p class="event-description">24-hour coding competition to solve real-world problems using technology.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="past-events" class="tab-pane">
+                    <div class="events-container">
+                        <div class="event-card past">
+                            <div class="event-date">
+                                <span class="day">10</span>
+                                <span class="month">Mar</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Workshop on AI & Machine Learning</h3>
+                                <p class="event-description">A hands-on workshop conducted by industry experts on the latest AI technologies.</p>
+                                <a href="#" class="event-gallery-link">View Gallery</a>
+                            </div>
+                        </div>
+                        <div class="event-card past">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">Feb</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Industry Visit to Tech Park</h3>
+                                <p class="event-description">Students visited leading tech companies to understand industry operations.</p>
+                                <a href="#" class="event-gallery-link">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Recruiters -->
+    <section id="recruiters" class="recruiters-section">
+        <div class="container">
+            <h2 class="section-title">Major Recruiters</h2>
+            <p class="section-description">Our students are placed in top companies across the globe</p>
+            
+            <div class="recruiters-container">
+                <div class="recruiter-logo">
+                    <img src="images/google.png" alt="Google">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/microsoft.png" alt="Microsoft">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/amazon.png" alt="Amazon">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/ibm.png" alt="IBM">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/tcs.png" alt="TCS">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/infosys.png" alt="Infosys">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/wipro.png" alt="Wipro">
+                </div>
+                <div class="recruiter-logo">
+                    <img src="images/accenture.png" alt="Accenture">
+                </div>
+            </div>
+            
+            <div class="placement-stats">
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Placement Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>₹8.5 LPA</h3>
+                    <p>Average Package</p>
+                </div>
+                <div class="stat-item">
+                    <h3>₹24 LPA</h3>
+                    <p>Highest Package</p>
+                </div>
+                <div class="stat-item">
+                    <h3>120+</h3>
+                    <p>Companies Visited</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"The IT department provided me with excellent technical knowledge and soft skills that helped me secure a position at Google. The faculty's guidance was invaluable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial1.jpg" alt="Student 1">
+                        <div class="author-info">
+                            <h4>Ananya Singh</h4>
+                            <p>Batch of 2020, Software Engineer at Google</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The practical exposure through industry projects and internships helped me understand real-world challenges. The department's industry connections are its biggest strength."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial2.jpg" alt="Student 2">
+                        <div class="author-info">
+                            <h4>Vikas Mehta</h4>
+                            <p>Batch of 2019, Product Manager at Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The entrepreneurship cell and innovation lab at the department encouraged me to think outside the box. Today, I run my own successful startup thanks to the foundation laid here."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial3.jpg" alt="Student 3">
+                        <div class="author-info">
+                            <h4>Neha Kapoor</h4>
+                            <p>Batch of 2018, Founder & CEO at TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Department of Information Technology<br>College of Technology Campus<br>University Road, City - 380015</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 9876543210</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>it.department@college.edu</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6979157244436!2d72.54340361496815!3d23.03104998494911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848ab2fbd0f1%3A0x998e6226a4bea64!2sAhmedabad%20University!5e0!3m2!1sen!2sin!4v1647419892548!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="College Logo">
+                    <h3>Department of Information Technology</h3>
+                    <p>Shaping the future through technology</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#clubs">Clubs</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#chapters">Student Chapters</a></li>
+                        <li><a href="#alumni">Alumni</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">E-Learning</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Research Publications</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter to get the latest updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Department of Information Technology. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

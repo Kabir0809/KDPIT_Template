@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Department - CSPIT</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* General Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --dark-color: #1d3557;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    position: relative;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--accent-color);
+    top: 0;
+    left: -45px;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--accent-color);
+    top: 0;
+    right: -45px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--box-shadow);
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.navbar-brand span {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 5px;
+    left: 15px;
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: calc(100% - 30px);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section Styles */
+.hero-section {
+    height: 100vh;
+    position: relative;
+}
+
+.heroSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-content {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+}
+
+.slide-content .container {
+    position: relative;
+    z-index: 1;
+}
+
+.slide-content h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.slide-content p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 100px 0;
+}
+
+.about-item {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+}
+
+.about-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about-item h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Clubs Section Styles */
+.clubs-section {
+    padding: 100px 0;
+}
+
+.club-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.club-card:hover {
+    transform: translateY(-10px);
+}
+
+.club-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.club-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.club-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.club-card p {
+    margin-bottom: 20px;
+    color: var(--gray-color);
+}
+
+/* Certifications Section Styles */
+.certifications-section {
+    padding: 100px 0;
+}
+
+.certification-content {
+    padding: 30px;
+}
+
+.certification-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.certification-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.certification-list li i {
+    color: var(--success-color);
+    margin-right: 10px;
+}
+
+.cert-logo {
+    background-color: white;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    transition: var(--transition);
+}
+
+.cert-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Student Chapters Section Styles */
+.chapters-section {
+    padding: 100px 0;
+}
+
+.chapter-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.chapter-card:hover {
+    transform: translateY(-10px);
+}
+
+.chapter-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.chapter-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.chapter-card p {
+    margin-bottom: 20px;
+    color: var(--gray-color);
+}
+
+/* Alumni Section Styles */
+.alumni-section {
+    padding: 100px 0;
+}
+
+.alumni-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.alumni-card:hover {
+    transform: translateY(-10px);
+}
+
+.alumni-img {
+    overflow: hidden;
+}
+
+.alumni-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.alumni-card:hover .alumni-img img {
+    transform: scale(1.1);
+}
+
+.alumni-info {
+    padding: 20px;
+}
+
+.alumni-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.alumni-position {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.alumni-batch {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+}
+
+.alumni-social {
+    margin-top: 15px;
+}
+
+.alumni-social a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.alumni-social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Gallery Section Styles */
+.gallery-section {
+    padding: 100px 0;
+}
+
+.nav-pills .nav-link {
+    color: var(--dark-color);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: var(--transition);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.gallery-item {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.gallery-link {
+    display: block;
+    position: relative;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 97, 238, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.event-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-date {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.event-date .day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.event-content {
+    flex-grow: 1;
+}
+
+.event-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.event-time, .event-location {
+    color: var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.event-time i, .event-location i {
+    margin-right: 5px;
+}
+
+.past-event {
+    opacity: 0.8;
+}
+
+.past-event .event-date {
+    background-color: var(--gray-color);
+}
+
+/* Recruiters Section Styles */
+.recruiters-section {
+    padding: 100px 0;
+}
+
+.recruiters-content {
+    padding: 30px;
+}
+
+.recruiters-stats {
+    margin: 30px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.stat-item h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.recruiter-logo {
+    background-color: white;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    transition: var(--transition);
+}
+
+.recruiter-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+    padding: 100px 0;
+}
+
+.testimonialSwiper {
+    padding-bottom: 50px;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 5px solid rgba(67, 97, 238, 0.1);
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-content h4 {
+    margin-bottom: 5px;
+}
+
+.testimonial-position {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.testimonial-batch {
+    color: var(--gray-color);
+    margin-bottom: 10px;
+}
+
+.testimonial-rating {
+    color: #ffc107;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-info {
+    padding: 30px;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item h4 {
+    margin-bottom: 5px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+/* Footer Styles */
+.footer-section {
+    background-color: #1d3557;
+    color: white;
+}
+
+.footer-top {
+    background-color: #1d3557;
+}
+
+.footer-widget h3 {
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-widget h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ddd;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footer-social a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+    color: white;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background-color: var(--primary-color);
+}
+
+.newsletter-form .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 50px 0 0 50px;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 50px 50px 0;
+}
+
+.footer-bottom {
+    background-color: #152a45;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-top: 15px;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+    
+    .slide-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .underline::before,
+    .underline::after {
+        display: none;
+    }
+    
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+    }
+    
+    .contact-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animation Classes */
+.fade-up {
+    animation: fadeUp 1s ease;
+}
+
+.fade-down {
+    animation: fadeDown 1s ease;
+}
+
+.fade-left {
+    animation: fadeLeft 1s ease;
+}
+
+.fade-right {
+    animation: fadeRight 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+     </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./logo.webp" alt="College Logo" class="logo">
+                <!-- <span>IT Department</span> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clubs">Clubs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chapters">Student Chapters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#alumni">Alumni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recruiters">Recruiters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image Slider -->
+    <section id="home" class="hero-section">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content" style="background-image: url('./PRIM.webp')">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8" data-aos="fade-up">
+                                    <h1>Welcome to IT Department</h1>
+                                    <p>Shaping the future through technology and innovation</p>
+                                    <a href="#about" class="btn btn-primary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content" style="background-image: url('/placeholder.svg?height=800&width=1600')">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8" data-aos="fade-up">
+                                    <h1>Excellence in Education</h1>
+                                    <p>Providing quality education with industry-relevant curriculum</p>
+                                    <a href="#certifications" class="btn btn-primary">Our Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content" style="background-image: url('/placeholder.svg?height=800&width=1600')">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8" data-aos="fade-up">
+                                    <h1>Industry Connections</h1>
+                                    <p>Building bridges between academia and industry</p>
+                                    <a href="#recruiters" class="btn btn-primary">Our Partners</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>About Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="/placeholder.svg?height=400&width=600" alt="About Us" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3>Department of Information Technology</h3>
+                    <p>The Department of Information Technology at CSPIT was established in 1999 with the aim to develop professionals with computing, mathematical and business skills who can analyze, design and implement Information Technology solutions.</p>
+                    <p>The department has state-of-the-art infrastructure and experienced faculty members dedicated to providing quality education and research opportunities to students.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4>20+ Years</h4>
+                                <p>Of Academic Excellence</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-users"></i>
+                                <h4>5000+</h4>
+                                <p>Alumni Network</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-building"></i>
+                                <h4>100+</h4>
+                                <p>Industry Partners</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-award"></i>
+                                <h4>NAAC A+</h4>
+                                <p>Accreditation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="clubs-section py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Student Clubs</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="zoom-in">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Coding Club</h3>
+                        <p>A community of coding enthusiasts who participate in hackathons, coding competitions, and workshops to enhance their programming skills.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & ML Club</h3>
+                        <p>Focused on exploring the latest advancements in Artificial Intelligence and Machine Learning through projects and research activities.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>App Development Club</h3>
+                        <p>Dedicated to mobile application development, providing a platform for students to learn and create innovative mobile solutions.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity Club</h3>
+                        <p>Focuses on cybersecurity awareness, ethical hacking, and network security through workshops and competitions.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3>AR/VR Club</h3>
+                        <p>Explores the world of Augmented and Virtual Reality through hands-on projects and immersive experiences.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design Club</h3>
+                        <p>Dedicated to user interface and experience design, helping students create visually appealing and user-friendly applications.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Industry Recognized Certifications</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="certification-content">
+                        <h3>Enhance Your Skills with Industry Certifications</h3>
+                        <p>Our department encourages students to pursue industry-recognized certifications to enhance their skills and improve employability. We have partnerships with leading technology companies to provide certification programs at discounted rates.</p>
+                        <ul class="certification-list">
+                            <li><i class="fas fa-check-circle"></i> Microsoft Certified: Azure Fundamentals</li>
+                            <li><i class="fas fa-check-circle"></i> AWS Certified Solutions Architect</li>
+                            <li><i class="fas fa-check-circle"></i> Google Cloud Professional Cloud Architect</li>
+                            <li><i class="fas fa-check-circle"></i> Cisco Certified Network Associate (CCNA)</li>
+                            <li><i class="fas fa-check-circle"></i> Oracle Certified Professional, Java SE Programmer</li>
+                            <li><i class="fas fa-check-circle"></i> CompTIA Security+</li>
+                            <li><i class="fas fa-check-circle"></i> Certified Ethical Hacker (CEH)</li>
+                            <li><i class="fas fa-check-circle"></i> Salesforce Certified Administrator</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">View All Certifications</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="certification-logos">
+                        <div class="row g-4">
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Microsoft" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="AWS" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Google" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Cisco" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Oracle" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="cert-logo">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="CompTIA" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Chapters Section -->
+    <section id="chapters" class="chapters-section py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Student Chapters</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="flip-left">
+                    <div class="chapter-card">
+                        <img src="/placeholder.svg?height=150&width=150" alt="ACM Chapter" class="img-fluid chapter-logo">
+                        <h3>ACM Student Chapter</h3>
+                        <p>Association for Computing Machinery chapter promoting computing as a science and profession.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="chapter-card">
+                        <img src="/placeholder.svg?height=150&width=150" alt="IEEE Chapter" class="img-fluid chapter-logo">
+                        <h3>IEEE Student Branch</h3>
+                        <p>Institute of Electrical and Electronics Engineers chapter for technical advancement.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="chapter-card">
+                        <img src="/placeholder.svg?height=150&width=150" alt="CSI Chapter" class="img-fluid chapter-logo">
+                        <h3>CSI Student Chapter</h3>
+                        <p>Computer Society of India chapter promoting professional development in IT.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="chapter-card">
+                        <img src="/placeholder.svg?height=150&width=150" alt="ISTE Chapter" class="img-fluid chapter-logo">
+                        <h3>ISTE Student Chapter</h3>
+                        <p>Indian Society for Technical Education chapter for enhancing technical skills.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#" class="btn btn-primary">Join a Chapter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable Alumni Section -->
+    <section id="alumni" class="alumni-section py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Notable Alumni</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="alumni-card">
+                        <div class="alumni-img">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Alumni 1" class="img-fluid">
+                        </div>
+                        <div class="alumni-info">
+                            <h3>Rahul Sharma</h3>
+                            <p class="alumni-position">Senior Software Engineer, Google</p>
+                            <p class="alumni-batch">Batch of 2015</p>
+                            <p class="alumni-desc">Rahul has been working at Google for the past 5 years and has contributed to several key projects including Google Maps and Google Assistant.</p>
+                            <div class="alumni-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="alumni-card">
+                        <div class="alumni-img">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Alumni 2" class="img-fluid">
+                        </div>
+                        <div class="alumni-info">
+                            <h3>Priya Patel</h3>
+                            <p class="alumni-position">Product Manager, Microsoft</p>
+                            <p class="alumni-batch">Batch of 2016</p>
+                            <p class="alumni-desc">Priya leads product development for Microsoft Teams and has been instrumental in its growth during the pandemic.</p>
+                            <div class="alumni-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="alumni-card">
+                        <div class="alumni-img">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Alumni 3" class="img-fluid">
+                        </div>
+                        <div class="alumni-info">
+                            <h3>Amit Desai</h3>
+                            <p class="alumni-position">Founder & CEO, TechInnovate</p>
+                            <p class="alumni-batch">Batch of 2012</p>
+                            <p class="alumni-desc">Amit founded TechInnovate, a startup focused on AI solutions for healthcare, which was recently acquired for $50 million.</p>
+                            <div class="alumni-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#" class="btn btn-primary">View All Alumni</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery and Events Section -->
+    <section id="gallery" class="gallery-section py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Gallery & Events</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <!-- Tabs for Gallery and Events -->
+            <ul class="nav nav-pills mb-4 justify-content-center" id="galleryTab" role="tablist" data-aos="fade-up">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="photos-tab" data-bs-toggle="pill" data-bs-target="#photos" type="button" role="tab">Photo Gallery</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="events-tab" data-bs-toggle="pill" data-bs-target="#events" type="button" role="tab">Upcoming Events</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="past-events-tab" data-bs-toggle="pill" data-bs-target="#past-events" type="button" role="tab">Past Events</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="galleryTabContent">
+                <!-- Photo Gallery Tab -->
+                <div class="tab-pane fade show active" id="photos" role="tabpanel" aria-labelledby="photos-tab">
+                    <div class="row g-4 gallery-container">
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 1" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 2" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 3" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 4" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 5" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-6 gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                            <a href="/placeholder.svg?height=600&width=800" class="gallery-link">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Gallery Image 6" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-primary">View More Photos</a>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events Tab -->
+                <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                    <div class="row">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Apr</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Annual Tech Fest - TechnoVision 2023</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+                                    <p>A national level technical symposium featuring coding competitions, project exhibitions, and technical paper presentations.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">Apr</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Workshop on Cloud Computing</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> IT Lab 3</p>
+                                    <p>A hands-on workshop on cloud computing technologies with experts from AWS and Microsoft Azure.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">05</span>
+                                    <span class="month">May</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Industry Expert Talk: AI in Healthcare</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Conference Hall</p>
+                                    <p>A talk by Dr. Rajesh Kumar, Head of AI Research at Apollo Hospitals, on the applications of AI in healthcare.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">12</span>
+                                    <span class="month">May</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Hackathon: Solve for Tomorrow</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 9:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> IT Department</p>
+                                    <p>A 12-hour hackathon to develop innovative solutions for real-world problems. Open to all students.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Past Events Tab -->
+                <div class="tab-pane fade" id="past-events" role="tabpanel" aria-labelledby="past-events-tab">
+                    <div class="row">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="event-card past-event">
+                                <div class="event-date">
+                                    <span class="day">10</span>
+                                    <span class="month">Mar</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Web Development Bootcamp</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> IT Lab 2</p>
+                                    <p>A hands-on bootcamp on modern web development technologies including React, Node.js, and MongoDB.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="event-card past-event">
+                                <div class="event-date">
+                                    <span class="day">25</span>
+                                    <span class="month">Feb</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Alumni Meet 2023</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 5:00 PM - 9:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> College Auditorium</p>
+                                    <p>Annual alumni meet to reconnect with former students and celebrate their achievements.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="event-card past-event">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Jan</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>Industry Visit to Infosys</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Infosys Campus</p>
+                                    <p>Educational visit to Infosys campus to understand industry practices and work culture.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="event-card past-event">
+                                <div class="event-date">
+                                    <span class="day">05</span>
+                                    <span class="month">Dec</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3>National Conference on IoT</h3>
+                                    <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Conference Hall</p>
+                                    <p>A national level conference on Internet of Things with paper presentations and keynote speeches.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Recruiters Section -->
+    <section id="recruiters" class="recruiters-section py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Major Recruiters</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="recruiters-content">
+                        <h3>Our Industry Partners</h3>
+                        <p>Our department has strong ties with leading technology companies that regularly recruit our students. We take pride in our high placement record and the quality of opportunities our students receive.</p>
+                        <div class="recruiters-stats">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <h4>95%</h4>
+                                        <p>Placement Rate</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <h4>100+</h4>
+                                        <p>Recruiting Companies</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <h4>₹8.5 LPA</h4>
+                                        <p>Average Package</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <h4>₹24 LPA</h4>
+                                        <p>Highest Package</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Placement Report</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="recruiters-logos">
+                        <div class="row g-4">
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" alt="IBM" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1280px-Infosys_logo.svg.png" alt="Infosys" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png" alt="TCS" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/1200px-Wipro_Primary_Logo_Color_RGB.svg.png" alt="Wipro" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture" class="img-fluid">
+                                </div>
+                            </div>
+                            
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png" alt="Capgemini" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/2560px-Oracle_logo.svg.png" alt="Oracle" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="recruiter-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Adobe_Corporate_Logo.png/1280px-Adobe_Corporate_Logo.png" alt="Adobe" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Testimonials</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="swiper testimonialSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-img">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Student 1" class="img-fluid">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The IT department at CSPIT provided me with a strong foundation in computer science and helped me develop practical skills that are highly valued in the industry. The faculty members are knowledgeable and supportive."</p>
+                                <h4>Ankit Patel</h4>
+                                <p class="testimonial-position">Software Engineer, Google</p>
+                                <p class="testimonial-batch">Batch of 2018</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-img">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Student 2" class="img-fluid">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The hands-on experience and project-based learning approach at CSPIT IT department prepared me well for my career. The department's focus on emerging technologies and industry collaboration is commendable."</p>
+                                <h4>Neha Shah</h4>
+                                <p class="testimonial-position">Data Scientist, Amazon</p>
+                                <p class="testimonial-batch">Batch of 2019</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-img">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Student 3" class="img-fluid">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The IT department's curriculum is well-designed and covers all aspects of computer science and information technology. The extracurricular activities and technical events helped me develop leadership and teamwork skills."</p>
+                                <h4>Raj Mehta</h4>
+                                <p class="testimonial-position">Tech Lead, Microsoft</p>
+                                <p class="testimonial-batch">Batch of 2017</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-img">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Student 4" class="img-fluid">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"I am grateful for the guidance and support provided by the faculty members at CSPIT IT department. The department's focus on research and innovation encouraged me to pursue higher studies in computer science."</p>
+                                <h4>Meera Joshi</h4>
+                                <p class="testimonial-position">PhD Candidate, Stanford University</p>
+                                <p class="testimonial-batch">Batch of 2016</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions about our programs, events, or admissions? Feel free to reach out to us.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Department of Information Technology, CSPIT, CHARUSAT Campus, Changa, Anand, Gujarat - 388421</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 2697 265011</p>
+                                <p>+91 2697 265021</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info.it@charusat.ac.in</p>
+                                <p>hod.it@charusat.ac.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1661860525377!2d72.81814231495988!3d22.59944998517475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c30bd44029%3A0x5e7c93b0fe6b3190!2sCHARUSAT!5e0!3m2!1sen!2sin!4v1648123456789!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-widget">
+                            <h3>About IT Department</h3>
+                            <p>The Department of Information Technology at CSPIT was established in 1999 with the aim to develop professionals with computing, mathematical and business skills.</p>
+                            <div class="footer-social mt-3">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-widget">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#clubs">Clubs</a></li>
+                                <li><a href="#certifications">Certifications</a></li>
+                                <li><a href="#chapters">Student Chapters</a></li>
+                                <li><a href="#alumni">Alumni</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-widget">
+                            <h3>Programs</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">B.Tech in Information Technology</a></li>
+                                <li><a href="#">M.Tech in Information Technology</a></li>
+                                <li><a href="#">PhD in Information Technology</a></li>
+                                <li><a href="#">Certificate Courses</a></li>
+                                <li><a href="#">Online Courses</a></li>
+                                <li><a href="#">Research Programs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-widget">
+                            <h3>Newsletter</h3>
+                            <p>Subscribe to our newsletter to get the latest updates about our department.</p>
+                            <form class="newsletter-form">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2023 Department of Information Technology, CSPIT. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by IT Students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script >
+        AOS.init({
+    duration: 1000,
+    once: true,
+    mirror: false
+});
+
+
+
+var heroSwiper = new Swiper(".heroSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+// Initialize Swiper for Testimonials
+var testimonialSwiper = new Swiper(".testimonialSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});
+
+// Navbar Scroll Effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Back to Top Button
+window.addEventListener('scroll', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+});
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        }
+    });
+});
+
+// Active Navigation Link on Scroll
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        
+        if (window.pageYOffset >= sectionTop - navbarHeight - 50) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Form Submission
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Here you would typically send the form data to a server
+    // For demonstration, we'll just show an alert
+    alert(`Thank you, ${name}! Your message has been sent. We will get back to you soon.`);
+    
+    // Reset the form
+    this.reset();
+});
+
+// Gallery Lightbox Effect (Simple Implementation)
+document.querySelectorAll('.gallery-link').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Create lightbox elements
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.style.position = 'fixed';
+        lightbox.style.top = '0';
+        lightbox.style.left = '0';
+        lightbox.style.width = '100%';
+        lightbox.style.height = '100%';
+        lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        lightbox.style.display = 'flex';
+        lightbox.style.alignItems = 'center';
+        lightbox.style.justifyContent = 'center';
+        lightbox.style.zIndex = '9999';
+        
+        const img = document.createElement('img');
+        img.src = this.getAttribute('href');
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+        img.style.border = '5px solid white';
+        img.style.borderRadius = '5px';
+        
+        const closeBtn = document.createElement('span');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.top = '20px';
+        closeBtn.style.right = '30px';
+        closeBtn.style.color = 'white';
+        closeBtn.style.fontSize = '40px';
+        closeBtn.style.cursor = 'pointer';
+        
+        lightbox.appendChild(img);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+        
+        // Prevent scrolling when lightbox is open
+        document.body.style.overflow = 'hidden';
+        
+        // Close lightbox on click
+        lightbox.addEventListener('click', function() {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = 'auto';
+        });
+    });
+});
+
+// Newsletter Subscription
+document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = this.querySelector('input[type="email"]').value;
+    
+    // Here you would typically send the email to a server
+    // For demonstration, we'll just show an alert
+    alert(`Thank you for subscribing to our newsletter with email: ${email}`);
+    
+    // Reset the form
+    this.reset();
+});
+
+// Animation on Scroll (Manual Implementation for Elements without AOS)
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+            const animationClass = element.getAttribute('data-animation') || 'fade-up';
+            element.classList.add(animationClass);
+        }
+    });
+}
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+
+// Counter Animation for Stats
+function animateCounter() {
+    const counters = document.querySelectorAll('.stat-item h4');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.innerText);
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.innerText = Math.ceil(current);
+                setTimeout(updateCounter, 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Run counter animation when stats section is in view
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter();
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+const statsSection = document.querySelector('.recruiters-stats');
+if (statsSection) {
+    observer.observe(statsSection);
+}
+    </script>
+</body>
+</html>
